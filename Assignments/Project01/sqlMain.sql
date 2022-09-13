@@ -27,7 +27,5 @@ UPDATE public.airports SET the_geom = ST_SetSRID(ST_MakePoint(lon,lat), 4326);
 
 UPDATE public.airports SET the_geom = ST_PointFromText('POINT(' || lon || ' ' || lat || ')', 4326);
 
--- Step 7 *************************************************** 
-
 
 CREATE INDEX idx_airports_geom ON public.airports USING GIST (the_geom);
