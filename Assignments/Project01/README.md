@@ -1,5 +1,5 @@
 # Description:
-## In this program I loaded data from a csv file to a databse firenews using the public schema. 
+## In this program I loaded data from a csv file to a databse airports using the public schema. 
 ## I then created an API using fasta api to return three specific pieces of information.
 ## 1. Return the entire table. To do so go to the /everything endpoint
 ## 2. Return a specific item from the table by giving the id. To do this go to the /one endpoint of the api
@@ -10,3 +10,5 @@
 ## The table creation is done in the sqlmain.sql file
 ## The api and the three get functions are done in The main.py file
 ## psycopg2 is used to work with the databse while using python and creating the api
+## The original csv file also had to have some data that was stored as null cleaned up since null values were saved as "\N"
+## The file reformatCSV.py transforms the data so it is able to be copied into the psql database by eliminating these characters.
