@@ -15,7 +15,7 @@
 
 #Sources:
 ## For the cursor used in main: 
-##https://github.com/rugbyprof/5443-Spatial-DB/blob/main/Lectures/02_Chap2/main.py
+## https://github.com/rugbyprof/5443-Spatial-DB/blob/main/Lectures/02_Chap2/main.py
 ## https://stackoverflow.com/questions/32812463/setting-schema-for-all-queries-of-a-connection-in-psycopg2-getting-race-conditi
 ## https://stackoverflow.com/questions/1984325/explaining-pythons-enter-and-exit
 
