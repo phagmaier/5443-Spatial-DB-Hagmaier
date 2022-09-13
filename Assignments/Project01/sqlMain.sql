@@ -1,32 +1,33 @@
--- From POSTGIS cookbook Ch1 with some edits 
---Also Added an index to the origanal table to help with queries
-
-CREATE EXTENSION postgis;
-CREATE TABLE public.firenews
+CREATE TABLE public.airports
 (
-  x float8,
-  y float8,
-  place varchar(100),
-  size float8,
-  update date,
-  startdate date,
-  enddate date,
-  title varchar(255),
-  url varchar(255),
-  the_geom geometry(POINT, 4326),
-  id int
+  id int,
+  name varchar(255),
+  city varchar(255),
+  country varchar(255),
+  three_code varchar(3),
+  four_code varchar(4),
+  lat float8,
+  lon float8,
+  elevation int,
+  gmt float,
+  tz_short varchar(1),
+  time_zone varchar(255),
+  typee varchar(8),
+  the_geom geometry(POINT, 4326)
 );
 
-COPY public.firenews (x, y, place, size, update, startdate, enddate, title, url, id) 
-FROM '/Users/parkerhagmaier/Desktop/AAAA/blank.csv' 
+
+COPY public.airports (id, name, city, country, three_code, four_code, lat, lon, elevation, gmt, tz_short, time_zone, typee) 
+FROM '/Users/parkerhagmaier/Desktop/AAAA/newAirports.csv'
 WITH CSV HEADER;
 
-SELECT f_table_name, f_geometry_column, coord_dimension, srid, type 
-FROM geometry_columns 
-where f_table_name = 'firenews';
 
-UPDATE public.firenews SET the_geom = ST_SetSRID(ST_MakePoint(x,y), 4326);
 
-UPDATE public.firenews SET the_geom = ST_PointFromText('POINT(' || x || ' ' || y || ')', 4326);
+UPDATE public.airports SET the_geom = ST_SetSRID(ST_MakePoint(lon,lat), 4326);
 
-CREATE INDEX idx_firenews_geom ON public.firenews USING GIST (the_geom);
+UPDATE public.airports SET the_geom = ST_PointFromText('POINT(' || lon || ' ' || lat || ')', 4326);
+
+-- Step 7 *************************************************** 
+
+
+CREATE INDEX idx_airports_geom ON public.airports USING GIST (the_geom);
