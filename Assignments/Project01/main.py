@@ -15,7 +15,7 @@ from fastapi import FastAPI
 
 '''
 PROGRAM DESCRIPTION:
-Create and API where we use psycopg2 to connect to the database public.firenews
+Create and API where we use psycopg2 to connect to the database public.airports
 Created three functions that correspond with thre eget statments that return all the data
 in the database as a dictionary, a function that retuns a single entry of the database based on
 entering the unique id associated with the that specific piece of data. Find the closest item in the 
@@ -47,7 +47,7 @@ class DatabaseCursor(object):
     '''
 
     def __enter__(self):
-        self.conn = con = psycopg2.connect(host="localhost", database="newproj", user="parkerhagmaier", password="Basketball01!")
+        self.conn = con = psycopg2.connect(host="localhost", database="project1", user="parkerhagmaier", password="Basketball01!")
         self.cur = self.conn.cursor(cursor_factory = psycopg2.extras.RealDictCursor)
         #self.cur.execute("SET search_path TO " + self.conn_config["schema"])
 
@@ -60,14 +60,15 @@ class DatabaseCursor(object):
         self.conn.close()
 
 
-#returns a dictionary from the database firenews in the public schema 
+#returns a dictionary from the database airports in the public schema 
 #with allows us to securly turn on our cursor when using it and turn it off when finished
 #cur.execute fetches the query from the database
 #stored in results and then returned to \everything
+#airports
 @app.get("/everything")
 def everything():
     with DatabaseCursor() as cur:
-        cur.execute('SELECT * FROM "public"."firenews"')
+        cur.execute('SELECT * FROM "public"."airports"')
         results = cur.fetchall()
         return results
 
@@ -77,7 +78,7 @@ def everything():
 @app.get("/one/{num}")
 def one(num: int):
     with DatabaseCursor() as cur:
-        statment = 'SELECT * FROM "public"."firenews" WHERE id = %s'
+        statment = 'SELECT * FROM "public"."airports" WHERE id = %s'
         cur.execute(statment, (num,))
         oneresults = cur.fetchall()
         return oneresults
@@ -88,7 +89,7 @@ def one(num: int):
 @app.get("/closest/{x}/{y}")
 def closest(x:float, y:float):
     with DatabaseCursor() as cur:
-        closer = 'SELECT * FROM "public"."firenews" ORDER BY "public"."firenews"."the_geom" <-> ST_MakePoint(%s,%s)::geography'
+        closer = 'SELECT * FROM "public"."airports" ORDER BY "public"."airports"."the_geom" <-> ST_MakePoint(%s,%s)::geography'
         cur.execute(closer, [x,y])
         newResult = cur.fetchone()
         return newResult
