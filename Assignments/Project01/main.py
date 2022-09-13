@@ -86,6 +86,8 @@ def one(num: int):
 #using psql's ST_MAKEPOINT we create a point based on the x and y entered (longitude and lat)
 #we then use psql's ORDER BY to order by the closest geography
 #return the first (closest) result in newResult
+#Source for finding out how to order by closest geography: 
+#https://stackoverflow.com/questions/37827468/find-the-nearest-location-by-latitude-and-longitude-in-postgresql
 @app.get("/closest/{x}/{y}")
 def closest(x:float, y:float):
     with DatabaseCursor() as cur:
