@@ -12,3 +12,15 @@
 ## psycopg2 is used to work with the databse while using python and creating the api
 ## The original csv file also had to have some data that was stored as null cleaned up since null values were saved as "\N"
 ## The file reformatCSV.py transforms the data so it is able to be copied into the psql database by eliminating these characters.
+
+#Sources:
+## For the cursor used in main: 
+##https://github.com/rugbyprof/5443-Spatial-DB/blob/main/Lectures/02_Chap2/main.py
+## https://stackoverflow.com/questions/32812463/setting-schema-for-all-queries-of-a-connection-in-psycopg2-getting-race-conditi
+## https://stackoverflow.com/questions/1984325/explaining-pythons-enter-and-exit
+
+## Getting the closest geography:
+## https://stackoverflow.com/questions/37827468/find-the-nearest-location-by-latitude-and-longitude-in-postgresql
+
+## SQLMain file the template was of how to load data comes from:
+## PostGis cookbook 
