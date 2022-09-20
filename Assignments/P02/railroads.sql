@@ -4,4 +4,5 @@
 
 CREATE INDEX idx_railroads_geom ON public.railroads USING GIST (the_geom);
 
+--Creating the table throught the command line by the way specfied above also creates an index on the spatial column automatically
 SELECT * FROM public.railroads LIMIT 5;
