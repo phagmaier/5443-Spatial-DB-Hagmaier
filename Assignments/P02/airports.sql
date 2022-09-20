@@ -31,3 +31,5 @@ UPDATE public.airports SET the_geom = ST_PointFromText('POINT(' || lon || ' ' ||
 
 
 CREATE INDEX idx_airports_geom ON public.airports USING GIST (the_geom);
+
+SELECT * FROM public.airports LIMIT 5;
