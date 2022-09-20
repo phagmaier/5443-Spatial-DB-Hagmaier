@@ -4,4 +4,6 @@
 
 CREATE INDEX idx_states_geom ON public.states USING GIST (the_geom);
 
+--Creating the table throught the command line by the way specfied above also creates an index on the spatial column automatically
+
 SELECT * FROM public.states LIMIT 5;
