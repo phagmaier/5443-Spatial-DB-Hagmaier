@@ -166,6 +166,15 @@ def interpolate(a,b,c,d):
         newResult = cur.fetchone()
         return newResult
 
+
+def get_bbox():
+	with DatabaseCursor() as cur:
+        statment = "SELECT fullname,ST_AsText(ST_Envelope(geom)) bbox,  ST_AsText(ST_Centroid(ST_Envelope(geom))) bboxcenter,  ST_AsText(ST_Centroid(geom)) center FROM military_bases ORDER BY fullname ASC"
+        cur.execute(statment)
+        newResult = cur.fetchall()
+        return newResult
+
+
 '''
 We simply add all the multi line strings to the table mypaths meant to hold the line of the 
 projectiles trajectory is of the type path
