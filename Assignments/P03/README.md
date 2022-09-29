@@ -1,5 +1,9 @@
 # PROJECT 3
 
+# STILL NEED TO UPDATE CODE WHAT IS IN HERE IS NOT UPDATED
+# STILL cannot get any intersections although my code will run and show that I am getting no 
+# hits so I assume that means my code is fine but I can not get intersections with random lines so something must be wrong
+
 # OVERVIEW
 ## In this assignemnt I used a bounding box around the United States
 ## and from that we generate random points around the edge of the bounding box
