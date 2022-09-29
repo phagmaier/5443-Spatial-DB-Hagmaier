@@ -23,8 +23,10 @@
 # Files:
 ## main.py :
 ### Description of main.py
-#### placeholder
+#### Using pythin and psycopg2 to connect to psql we will query our military bases data
+#### create data to store into other tables and we will also clean some of the results of our
+#### results from psql using python and also generate combinations with python
 
 ## mainsql.sql:
 ### Description of mainsql.sql
-#### Placeholder
+#### Simply create the three tables where we will store our data
