@@ -1,5 +1,9 @@
 # PROJECT 3
 
+# FOUND PROBLEM:
+# Created geometry and not geography.
+# Will fix tomorow and also fix my code because it is embarassingly bad
+# Mostly writing this in case DR. Griffin is reading this in which case sorry this should have been obvious I don't know why i'm strugguling so much with this stuff
 # STILL NEED TO UPDATE CODE WHAT IS IN HERE IS NOT UPDATED
 # STILL cannot get any intersections although my code will run and show that I am getting no hits so I assume that means my code is fine but I can not get intersections with random lines so something must be wrong
 
