@@ -1,13 +1,5 @@
 # PROJECT 3
 
-# FOUND PROBLEM:
-## Did not take into account the difference and necesity of using gography not geometry and converting betweent the two
-## Or at least I think this is part of the problem 
-## Will fix tomorow and also fix my code because it is embarassingly bad
-## Mostly writing this in case DR. Griffin is reading this in which case sorry this should have been obvious I don't know why i'm strugguling so much with this stuff
-
-# STILL NEED TO UPDATE CODE WHAT IS IN HERE IS NOT UPDATED
-# STILL cannot get any intersections although my code will run and show that I am getting no hits so I assume that means my code is fine but I can not get intersections with random lines so something must be wrong
 
 # OVERVIEW
 ## In this assignemnt I used a bounding box around the United States
@@ -16,7 +8,7 @@
 ## These combinations are then turned into multi point line strings 
 ## And then saved into a table where all these paths will be stored
 ## We will also store the area for the 50 largest military bases in a seperate table
-## with the idea behind it being to find if these lines intersect any of the locations of the military bases
+## with the idea being to find if these lines intersect any of the locations of the military bases
 
 # Message about output:
 ## My pg admin is not working for some reason and the data displays horribly on my terminal
