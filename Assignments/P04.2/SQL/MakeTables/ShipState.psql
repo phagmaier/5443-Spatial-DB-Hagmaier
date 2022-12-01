@@ -1,0 +1,18 @@
+DROP TABLE IF EXISTS public.ship_state;
+
+-- This table keeps track of each ships bearing, speed, and its location.
+CREATE TABLE public.ship_state (
+    ship_id integer,
+    bearing float,
+    speed numeric,
+    location  geometry(POINT, 4326),
+    constraint PK_ship_state primary key (ship_id),
+    constraint FK_ship_state_SHIP_ID foreign key (ship_id) references ships(id)
+);
+
+DROP INDEX IF EXISTS public.ships_state_location_idx;
+
+CREATE INDEX IF NOT EXISTS ships_location_idx
+    ON public.ship_state USING gist
+    (location)
+    TABLESPACE pg_default;

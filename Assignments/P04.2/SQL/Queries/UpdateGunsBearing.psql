@@ -1,0 +1,1 @@
+UPDATE gun_state SET bearing = 22 WHERE ship_id = 6

@@ -1,0 +1,1 @@
+UPDATE ship_state SET bearing = 45, speed = 40 WHERE ship_id = 3

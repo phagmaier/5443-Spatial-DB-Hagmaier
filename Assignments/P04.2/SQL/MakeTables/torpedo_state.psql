@@ -1,0 +1,12 @@
+DROP TABLE IF EXISTS public.torpedo_state;
+
+-- This table keeps track of a specific ships torpedos.
+CREATE TABLE public.torpedo_state (
+    ship_id int,
+    t_id text,
+    location text,
+    side text,
+    facing text,
+    FOREIGN KEY (t_id) REFERENCES torpedo(name),
+    FOREIGN KEY (ship_id) REFERENCES ships(id)
+);

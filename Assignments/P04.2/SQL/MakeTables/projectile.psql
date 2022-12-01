@@ -1,0 +1,16 @@
+DROP TABLE IF EXISTS public.projectile;
+
+CREATE TABLE public.projectile (
+    --make primary key
+    name text NOT NULL,
+    mm numeric,
+    kg numeric,
+    constraint PK_projectile primary key (name)
+);
+
+
+INSERT INTO public.projectile (name, mm, kg) VALUES ('MK15', 400, 1020);
+INSERT INTO public.projectile (name, mm, kg) VALUES ('MK13', 400, 1165);
+INSERT INTO public.projectile (name, mm, kg) VALUES ('MK8', 450, 1310);
+INSERT INTO public.projectile (name, mm, kg) VALUES ('MK3', 450, 1455);
+INSERT INTO public.projectile (name, mm, kg) VALUES ('MK1', 475, 1600);

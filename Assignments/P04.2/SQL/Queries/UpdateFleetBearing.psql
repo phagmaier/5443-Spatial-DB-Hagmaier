@@ -1,0 +1,1 @@
+UPDATE ship_state SET bearing = 270

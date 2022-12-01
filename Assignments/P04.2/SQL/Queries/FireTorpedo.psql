@@ -1,0 +1,1 @@
+DELETE FROM torpedo_state WHERE ship_id = 21 and t_id = 'MK31' and location = 'bow' and side = 'port' and facing = 'ahead'

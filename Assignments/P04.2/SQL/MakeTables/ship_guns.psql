@@ -1,0 +1,11 @@
+DROP TABLE IF EXISTS public.ships_guns;
+
+CREATE TABLE public.ships_guns (
+    --ship id is going to be a foreign key to ships id and it is going to be primary key
+    ship_id int NOT NULL,
+    gun_id text NOT NULL,
+    type text,
+    pos numeric,
+    FOREIGN KEY (ship_id) REFERENCES ships(id),
+    FOREIGN KEY (gun_id) REFERENCES gun(name)
+);

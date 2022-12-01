@@ -1,0 +1,1 @@
+UPDATE gun_state SET ammo = ammo - 1 WHERE ammo > 0 and ship_id = 3 and gun_id = 'Mark13'

@@ -1,0 +1,12 @@
+DROP TABLE IF EXISTS public.gun_state;
+
+-- This table keeps track of a specific ships guns, direction each is facing, their elevation, and how much ammo. 
+CREATE TABLE public.gun_state (
+    ship_id int,
+    gun_id text,
+    bearing float,
+    elevation float,
+    ammo numeric,
+    FOREIGN KEY (gun_id) REFERENCES gun(name),
+    FOREIGN KEY (ship_id) REFERENCES ships(id)
+);
