@@ -1,0 +1,29 @@
+DROP EXTENSION IF EXISTS postgis CASCADE;
+CREATE EXTENSION postgis;
+
+DROP TABLE IF EXISTS public.ships;
+
+CREATE TABLE IF NOT EXISTS public.ships
+(
+    id integer,
+    category text,
+    shipClass text,
+    length integer,
+    width integer,
+    torpedoLaunchers json NULL,
+    armament json,
+    hullArmor integer,
+    deckArmor integer,
+    speed integer,
+    turnRadius integer,
+    location GEOMETRY(POINT,4326) NULL,
+    bearing float,
+    CONSTRAINT ships_pkey PRIMARY KEY (id)
+);
+
+DROP INDEX IF EXISTS public.ships_location_idx;
+
+CREATE INDEX IF NOT EXISTS ships_location_idx
+    ON public.ships USING gist
+    (location)
+    TABLESPACE pg_default;
