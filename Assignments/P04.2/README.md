@@ -1,5 +1,5 @@
 ## P04.2 - BS: Database Creation
-### Dakota Wilson
+### Parker Hagmaier
 ### Description:
 
 This project creates all necessary tables for this game as well as setting some basic reusable. Also there is a schema of the database.
